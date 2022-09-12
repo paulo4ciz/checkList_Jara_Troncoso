@@ -1,0 +1,52 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="header">Alumno</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+ 
+<div class="iconalumno">
+  <img src="assets/alumnofoto.png" alt="" width="180px">
+  <h5 class="nombre">Nombre Apellido1 Apellido2</h5>
+  </div>
+
+<div class="container_botones">
+<div class="botones">
+<ion-button  class="scann" fill="solid" expand="block" routerLink="/alumno-escanear-qr">
+  Escanear Código QR
+</ion-button> 
+</div>
+<div class="botones">
+<ion-button class="asig" fill="solid" expand="block" routerLink="/alumno-asignaturas">
+  Ver Asignaturas
+</ion-button>
+</div>
+<div class="botones">
+<ion-button class="asig" fill="solid" expand="block" color="danger" routerLink="/inicio" (click)="logout()">
+  cerrar sesion
+</ion-button>
+</div>
+</div>
+
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <div class="footer">
+      
+      <ion-tab-button (click)="Saludo()" >
+        <ion-icon name="woman"></ion-icon>
+        <ion-label>¿Quienes somos?</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="Contacto()">
+        <ion-icon name="paper-plane"></ion-icon>
+        <ion-label>contactanos</ion-label>
+      </ion-tab-button>
+     
+    </div>
+  </ion-toolbar>
+</ion-footer>
+

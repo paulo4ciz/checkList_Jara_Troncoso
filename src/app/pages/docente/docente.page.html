@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="header">Docente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <div class="logo">
+    <img src="assets/logo_docente.png" alt="" width=220px>
+  </div>
+  <br>
+  <form #formulario="ngForm" (ngSubmit)="onSubmit()">
+
+
+    <ion-item class="inputs">
+      <ion-label>Nombre: </ion-label>
+      <ion-input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="usuario.nombre" required>
+      </ion-input>
+    </ion-item>
+
+    <br>
+    <ion-item class="inputs">
+      <ion-label>Password: </ion-label>
+      <ion-input type="password" placeholder="Contraseña" name="password" value="" [(ngModel)]="usuario.password"
+        required>
+      </ion-input>
+    </ion-item>
+    <br>
+    <ion-button class="boton_inicio" [disabled]="formulario.invalid" type="submit" expand="block"
+      routerLink="/docente-home">
+      Iniciar sesión
+    </ion-button>
+    <div class="contraseña"><a href="">¿Olvidaste tu contraseña?</a></div>
+
+    <div class="boton_google">
+      <ion-button class="google" size="small" shape="round" fill="outline" >
+        <ion-icon class="icono_google" name="logo-google"></ion-icon> &nbsp;
+        <ion-label>Continuar con Google</ion-label>
+      </ion-button>
+    </div>
+    <div class="boton_google">
+      <ion-button class="google" size="small" shape="round" fill="outline" >
+        <ion-icon class="icono_google" name="logo-facebook"></ion-icon> &nbsp;
+        <ion-label>Continuar con Facebook</ion-label>
+      </ion-button>
+    </div>
+  </form>
+
+
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <div class="footer">
+      <ion-tab-button routerLink="/inicio">
+        <ion-icon name="arrow-back"></ion-icon>
+        <ion-label>Atras</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="Saludo()">
+        <ion-icon name="woman"></ion-icon>
+        <ion-label>¿Quienes somos?</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="Contacto()">
+        <ion-icon name="paper-plane"></ion-icon>
+        <ion-label>contactanos</ion-label>
+      </ion-tab-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

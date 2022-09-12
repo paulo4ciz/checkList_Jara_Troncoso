@@ -1,0 +1,100 @@
+
+.background{
+    --ion-background-color: linear-gradient(180deg, #cdf9fc 25%, #52ACFF 100%);
+}
+
+@font-face {
+    font-family: "roboto_light";
+    src: url(/assets/fonts/Roboto-Light.ttf);
+  }
+
+  @font-face {
+    font-family: "roboto_thin";
+    src: url(/assets/fonts/Roboto-Thin.ttf);
+  }
+
+  @font-face {
+    font-family: "lemon_medium";
+    src: url(/assets/fonts/lemon_medium.otf);
+  }
+// inicio //
+
+.logoinicio{
+    padding-left: 15px;
+    text-align: center;
+}
+
+.bienvenido {
+    text-align: center;
+    color: black;
+    font-family: 'lemon_medium';
+}
+
+.inicio {
+    text-align: center;
+    font-family: 'roboto_light';
+}
+
+.registrate{
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    --border-radius: 25px;
+    --border-width: 0px;
+    
+
+}
+
+.footer{
+    display:flex;
+}
+
+.header{
+    text-align: center;
+    font-family: 'lemon_medium';
+    display: flex;
+}
+
+
+
+
+.icondoce{
+    text-align: center;
+    padding-top: 30px;
+}
+
+.titu{
+    padding-top: 10px;
+    color: black;
+}
+
+.botones{
+    text-align: center;
+}
+
+.genqr{
+    --border-radius:25px;
+    font-family: 'roboto_light';
+    --border-width: 1px;
+    --border-color: black;
+   
+}
+
+.conect{
+    --border-radius:25px;
+    font-family: 'roboto_light';
+    --border-width: 1px;
+    --border-color: black;
+}
+
+.cerrar_sesion{
+    --border-radius:25px;
+    font-family: 'roboto_light';
+    --border-width: 1px;
+    --border-color: black;
+    
+}
+
+.container_botones{
+    padding-top: 100px;
+}

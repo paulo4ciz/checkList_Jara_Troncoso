@@ -1,0 +1,56 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="header_inicio">CheckList</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <div class="logoinicio">
+    <img src="assets/logo_inicio.png" alt="" width=200px>
+  </div>
+
+  <div class="inicio">
+    <h3 class="bienvenido">¡Bienvenido!</h3>
+    <h3 class="bienvenido">¡Comencemos!</h3>
+    <h2>¿Que eres?</h2>
+    <ion-button fill="solid" shape="round" (click)="Docente()" routerLink="/docente">
+      Docente
+    </ion-button>
+    
+    <ion-button fill="outline" shape="round" (click)="Alumno()" routerLink="/alumno">
+      Alumno
+    </ion-button>
+
+    <h4>¿No tienes cuenta?</h4>
+    
+
+      <ion-button class="registrate" fill="outline" size="default" expand="block" routerLink="/registro">
+        <ion-label>Registrate</ion-label>
+      </ion-button>
+
+    
+  </div>
+  <div class="descarga">
+    <p>puesdes descargar la aplicación en:</p>
+    <img src="assets/apple.png" alt="" width=120px> &nbsp;
+    <img src="assets/google.png" alt="www.google.cl" width=120px>
+  </div>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <div class="footer">
+      
+      <ion-tab-button (click)="Saludo()" >
+        <ion-icon name="woman"></ion-icon>
+        <ion-label>¿Quienes somos?</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="Contacto()">
+        <ion-icon name="paper-plane"></ion-icon>
+        <ion-label>contactanos</ion-label>
+      </ion-tab-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

@@ -1,83 +1,75 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
-import { MenuController } from '@ionic/angular';
+import { AlertController  } from '@ionic/angular';
+import { RegistroserviceService, registro  } from 'src/app/services/registroservice.service';
+import { ToastController } from '@ionic/angular';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { InicioPage } from '../inicio/inicio.page';
+
+
+
 
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
   styleUrls: ['./registro.page.scss'],
 })
+
 export class RegistroPage implements OnInit {
 
-  constructor(private alertController: AlertController,
-              public menuCtrl: MenuController) { }
+  formularioRegistro: FormGroup;
+  
+  newRegistro: registro=<registro>{};
 
-  async Saludo() {
-    const alert = await this.alertController.create({
-      header: '¿Quienes somos?',
-      message: 'Somos un equipo de estudiantes de DuocUc, quienes desarrollamos esta App con la finalidad de mejorar la forma de registrar la asistencia entre alumnos y docentes. Permitiendo así, reducir la cantidad de errores y tiempo en que se pasa la lista. Nuestro objetivo es ayudar a mejorar con tecnología la forma en que se registra la asistencia y ahorrar tiempo a profesores y alumnos.',
-      buttons: ['OK'],
-    });
+  constructor(private registroService: RegistroserviceService,
+              private alertController: AlertController,
+              private toastController: ToastController,
+              private fb: FormBuilder){
+                this.formularioRegistro=this.fb.group({
+                  'Nombre': new FormControl("", Validators.required),
+                  'email': new FormControl("", Validators.required),
+                  'password':  new FormControl("", Validators.required),
+                });
+              }
+ ngOnInit() {}
+ 
+  async CrearUsuario(){
+    var form=this.formularioRegistro.value;
+    if(this.formularioRegistro.invalid){
+      const alert= await this.alertController.create({
+        header:'Datos Incompletos',
+        message:'Debe ingresar todos los datos',
+        buttons:['Aceptar'],
+      });
 
-    await alert.present();
-  }
+      await alert.present();
+      return;
+    }
+    this.newRegistro.Nombre=form.Nombre,
+    this.newRegistro.Email=form.email,
+    this.newRegistro.Password=form.password,
+    this.registroService.addRegistro(this.newRegistro).then(dato=>{
+       this.newRegistro=<registro>{};
+       this.showToast('Datos agregados');
+     })
+   }
+   async showToast(msg){
+    const toast =await this.toastController.create({
+      message: msg,
+      duration: 2000
+    })
+    toast.present();
+   }
 
-  async Contacto() {
-    const alert = await this.alertController.create({
-      header: 'Ingrese sus datos',
-      buttons: ['Enviar'],
-      inputs: [
-        {
-          placeholder: 'Nombre',
-        },
-        {
-          placeholder: 'Nickname (max 8 cáracteres)',
-          attributes: {
-            maxlength: 8,
-          },
-        },
-        {
-          type: 'email',
-          placeholder: 'nombre@duocuc.cl',
-        },
-        {
-          type: 'number',
-          placeholder: 'Edad',
-          min: 1,
-          max: 100,
-        },
-        {
-          type: 'textarea',
-          placeholder: 'Cuéntanos tus dudas',
-        },
-        
-      ],
-    });
+   }
 
-    await alert.present();
-  }
 
-  ngOnInit() {
-  }
-    usuario = {
-    nombre: '',
-    password: '',
-    email: '',
-    fecha_nacimiento: ''
-  }
 
-  onSubmit() {
-    console.log('submit');
-    console.log(this.usuario);
-  }
 
-  ionViewWillEnter() {
 
-    this.menuCtrl.swipeGesture(false)
-  }
 
-  ionViewDidLeave() {
 
-    this.menuCtrl.swipeGesture(true)
-  }
-}
+
+
+               
+ 
+

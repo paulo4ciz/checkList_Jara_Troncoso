@@ -60,12 +60,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/alumno-asignaturas/alumno-asignaturas.module').then( m => m.AlumnoAsignaturasPageModule)
   },
   {
-    path: 'docente-editar-asistencia',
-    loadChildren: () => import('./pages/docente-editar-asistencia/docente-editar-asistencia.module').then( m => m.DocenteEditarAsistenciaPageModule)
+    path: 'datos',
+    loadChildren: () => import('./pages/datos/datos.module').then( m => m.DatosPageModule)
   },
   {
-    path: 'reestablecer',
-    loadChildren: () => import('./pages/reestablecer/reestablecer.module').then( m => m.ReestablecerPageModule)
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
  
     

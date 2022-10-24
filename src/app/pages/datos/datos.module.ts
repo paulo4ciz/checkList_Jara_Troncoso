@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ReestablecerPageRoutingModule } from './reestablecer-routing.module';
+import { DatosPageRoutingModule } from './datos-routing.module';
 
-import { ReestablecerPage } from './reestablecer.page';
+import { DatosPage } from './datos.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ReestablecerPageRoutingModule
+    DatosPageRoutingModule
   ],
-  declarations: [ReestablecerPage]
+  declarations: [DatosPage]
 })
-export class ReestablecerPageModule {}
+export class DatosPageModule {}

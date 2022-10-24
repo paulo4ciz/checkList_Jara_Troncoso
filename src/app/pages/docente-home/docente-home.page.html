@@ -5,45 +5,23 @@
         <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-   
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="background">
 
-
-  <div class="icondoce">
-    <img src="assets/libro.png" alt="" width="190px">
-    <h3 class="titu">Bienvenido!</h3>
-  </div>
-  <div class="container_botones">
-    <div class="botones">
-      <ion-button class="conect" fill="solid" expand="block" routerLink=" " (click)="proyect()">
-        Conectar Proyector
-      </ion-button>
-    </div>
-    <div class="botones">
-      <ion-button class="genqr" fill="solid" expand="block"  routerLink="/docente-generar-qr">
-        Generar Qr
-      </ion-button>
-    </div>
-    <div class="botones">
-      <ion-button class="cerrar_sesion" fill="solid" expand="block"  color="danger" routerLink="/inicio" (click)="logout()"> 
-        Cerrar sesion
-      </ion-button>
-    </div>
-  </div>
 </ion-content>
 
 <ion-footer class="ion-no-border">
   <ion-toolbar>
     <div class="footer">
-
-      <ion-tab-button (click)="Saludo()">
+      
+      <ion-tab-button (click)="Saludo()" >
         <ion-icon name="woman"></ion-icon>
-        <ion-label>¿Quienes somos?</ion-label>
+        <ion-label>Nosotros</ion-label>
       </ion-tab-button>
-      <ion-tab-button (click)="Contacto()">
+      <ion-tab-button routerLink="/inicio">
         <ion-icon name="paper-plane"></ion-icon>
         <ion-label>contactanos</ion-label>
       </ion-tab-button>

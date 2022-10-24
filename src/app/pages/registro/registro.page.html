@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-toolbar>
 
@@ -12,50 +11,44 @@
     <img src="assets/logo_registro.png" alt="" width=200px>
   </div>
  
-  <form #formulario="ngForm" (ngSubmit)="onSubmit()">
+  <form [FormGroup]="formularioRegistro" (keyup.enter)="CrearUsuario()">
 
 
-    <ion-item class="inputs">
+    <ion-item>
       <ion-label>Nombre: </ion-label>
-      <ion-input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="usuario.nombre" required>
+      <ion-input type="text" formControlName="Nombre" required>
       </ion-input>
     </ion-item>
 
    
-    <ion-item class="inputs">
+    <ion-item>
       <ion-label>Password: </ion-label>
-      <ion-input type="password" placeholder="Contraseña" name="password" value="" [(ngModel)]="usuario.password"
-        required>
-      </ion-input>
+      required>
+    </ion-input>
+    <ion-input type="password" formControlName="Password"></ion-input>
     </ion-item>
    
-    <ion-item class="inputs">
+    <ion-item>
       <ion-label>Email: </ion-label>
-      <ion-input type="email" placeholder="Email" name="email" value="" [(ngModel)]="usuario.email"
+      <ion-input type="email" formControlName="Email"
         pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
       </ion-input>
     </ion-item>
     
-    
-    <ion-item class="inputs">
-      <ion-select interface="action-sheet" placeholder="¿que eres?" required>
-        <ion-select-option value="apples">Docente</ion-select-option>
-        <ion-select-option value="oranges">Alumno</ion-select-option>
-        
-      </ion-select>
+    <ion-item >
+      <ion-label>Fnaci.: </ion-label>
+      <ion-input type="date" formControlName="Fnaci"
+        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
+      </ion-input>
     </ion-item>
-    <ion-button class="boton_registrate" [disabled]="formulario.invalid" type="submit" expand="block"
-      routerLink="/inicio">
+    <ion-button (click)="Crear Usuario" ></ion-button>
       Registrar
     </ion-button>
 
 
 
   </form>
-  <div class="privacidad">
-    <p>Recuerda que al registrarte aceptas nuestros terminos y condiciones</p>
-    <p>Enterate como usamos tus datos en nuestra Politica de Privacidad</p>
-  </div>
+
 </ion-content>
 
 <ion-footer class="ion-no-border">
@@ -63,13 +56,13 @@
     <div class="footer">
       <ion-tab-button routerLink="/inicio">
         <ion-icon name="arrow-back"></ion-icon>
-        <ion-label>Atras</ion-label>
+        <ion-label>back</ion-label>
       </ion-tab-button>
       <ion-tab-button (click)="Saludo()">
         <ion-icon name="woman"></ion-icon>
-        <ion-label>¿Quienes somos?</ion-label>
+        <ion-label>about us</ion-label>
       </ion-tab-button>
-      <ion-tab-button (click)="Contacto()">
+      <ion-tab-button routerLink="/inicio">
         <ion-icon name="paper-plane"></ion-icon>
         <ion-label>contactanos</ion-label>
       </ion-tab-button>

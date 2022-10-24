@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-toolbar>
     <ion-title class="header">QR</ion-title>
@@ -10,38 +9,35 @@
 </ion-header>
 
 <ion-content class="background">
- 
-
+ <div class="qrscann">
+<div class="alumnoqr">
+  
+  </div>
   <div class="titulo" >
     <h4>Escanea tu QR para quedar presente!</h4>
-  </div >
 <div class="qrimg">
   
 <img src="assets/qrscan.png" alt="" width="220px">
 
-
-
-</div >
-<div class="qr">
-  <ion-button >
-    <ion-icon name="qr-code-outline"></ion-icon>
-  </ion-button> 
 </div>
 
+</div>
+  <ion-button  class="qr" >
+    <ion-icon name="qr-code-outline"></ion-icon>
+  </ion-button> 
+
+</div>
 </ion-content>
 
 <ion-footer class="ion-no-border">
   <ion-toolbar>
     <div class="footer">
-      <ion-tab-button routerLink="/alumno-home">
-        <ion-icon name="arrow-back"></ion-icon>
-        <ion-label>Atras</ion-label>
-      </ion-tab-button>
+      
       <ion-tab-button (click)="Saludo()" >
         <ion-icon name="woman"></ion-icon>
-        <ion-label>¿Quienes somos?</ion-label>
+        <ion-label>Nosotros</ion-label>
       </ion-tab-button>
-      <ion-tab-button (click)="Contacto()">
+      <ion-tab-button routerLink="/inicio">
         <ion-icon name="paper-plane"></ion-icon>
         <ion-label>contactanos</ion-label>
       </ion-tab-button>

@@ -36,15 +36,12 @@
 }
 
 .registrate{
-    font-family: 'roboto_light';
     text-align: center;
-    --border-color: black;
-    --background-color: black;
-    --border-width: 1px;
+    padding-left: 20px;
+    padding-right: 20px;
     --border-radius: 25px;
-    padding-left: 30px;
-    padding-right: 30px;
-    --color-activated: blue;
+    --border-width: 0px;
+    
 
 }
 
@@ -55,18 +52,4 @@
 .header_inicio{
     text-align: center;
     font-family: 'lemon_medium';
-}
-
-
-
-.ejemplo {
-   padding: 0;
-   margin-bottom: 0;
-   --border-bottom-left-radius: 15px;
-}
-
-.descarga{
-    padding-bottom: 10px;
-    text-align: center;
-    font-family: 'roboto_light';
 }

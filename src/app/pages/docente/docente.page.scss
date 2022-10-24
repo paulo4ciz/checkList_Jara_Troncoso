@@ -28,6 +28,8 @@
     --border-radius: 25px;
     --border-width: 0px;
     font-family: "roboto_light";
+
+    
 }
 
 .logo{
@@ -44,26 +46,4 @@
 .header{
     text-align: center;
     font-family: 'lemon_medium';
-}
-
-.google{
-    font-family: "roboto_light";
-    --border-width: 0px;
-    --color: blue;
-}
-
-.boton_google{
-    text-align: center;
-}
-
-.icono_google{
-    color: black;
-}
-
-.contraseña{
-    text-align: center;
-    font-size: 11px;
-    a{
-        color: red;
-    }
 }

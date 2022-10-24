@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      
+      <ion-card-title>Login</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+    </ion-card-content>
+    <form [formGroup]="formularioLogin">
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input formControl="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-input formControl="password" type="password"></ion-input>
+      </ion-item>
+    </form>
+    <br>
+    <ion-button (click)="Ingresar" expand="block" fill="outline" shape="round">
+      Ingresar
+    </ion-button>
+  </ion-card>
+
+</ion-content>

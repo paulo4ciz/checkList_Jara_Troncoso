@@ -6,12 +6,11 @@
 
 <ion-content class="background">
   
-  <div class="asigp">
-    <h3>Programación movil</h3>
-    <p>
-      Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años.
-
-    </p>
+  <div class="titulo">
+    Estas son tus Asignaturas
+  </div>
+  <div class="ejemplo_lista">
+    <img src="assets/ejemplo_lista.png" alt="" width=300spx>
   </div>
 
 
@@ -21,15 +20,15 @@
 <ion-footer class="ion-no-border">
   <ion-toolbar>
     <div class="footer">
-      <ion-tab-button routerLink="/inicio">
+      <ion-tab-button routerLink="/alumno-home">
         <ion-icon name="arrow-back"></ion-icon>
         <ion-label>Atras</ion-label>
       </ion-tab-button>
-      <ion-tab-button routerLink="/inicio">
+      <ion-tab-button (click)="Saludo()">
         <ion-icon name="woman"></ion-icon>
         <ion-label>Nosotros</ion-label>
       </ion-tab-button>
-      <ion-tab-button routerLink="/inicio">
+      <ion-tab-button (click)="Contacto()">
         <ion-icon name="paper-plane"></ion-icon>
         <ion-label>contactanos</ion-label>
       </ion-tab-button>

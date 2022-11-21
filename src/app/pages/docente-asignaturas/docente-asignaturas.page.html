@@ -1,9 +1,35 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>docente_asignaturas</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" color="primary">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="background">
+<div class="titulo">
+  Asignaturas
+</div>
+<div class="ejemplo_lista">
+  <img src="assets/ejemplo_lista.png" alt="" width=300spx>
+</div>
 </ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <div class="footer">
+      
+      <ion-tab-button (click)="Saludo()" >
+        <ion-icon name="woman"></ion-icon>
+        <ion-label>Nosotros</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="Contacto()">
+        <ion-icon name="paper-plane"></ion-icon>
+        <ion-label>contactanos</ion-label>
+      </ion-tab-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

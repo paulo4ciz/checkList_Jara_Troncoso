@@ -3,8 +3,6 @@ import { IonicModule } from '@ionic/angular';
 
 import { RegistroPage } from './registro.page';
 
-
-
 describe('RegistroPage', () => {
   let component: RegistroPage;
   let fixture: ComponentFixture<RegistroPage>;

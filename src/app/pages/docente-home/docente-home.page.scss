@@ -54,3 +54,50 @@
     font-family: 'lemon_medium';
     display: flex;
 }
+
+.genqr{
+    text-align: center;
+    margin-top: 30px ;
+    margin-left: 90px;
+
+}
+
+.conect{
+    text-align: center;
+    margin-top: 30px ;
+    margin-left: 70px;
+
+}
+
+.icondoce{
+padding-left: 70px;
+padding-top: 30px;
+}
+
+.titu{
+    padding-left: 30px;
+    padding-top: 10px;
+    color: black;
+}
+
+.imagenNoticias{
+    --border-radius: 25px;
+}
+
+.inputs{
+    --ion-background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 8px;
+    --border-radius: 25px;
+    --border-width: 0px;
+    font-family: "roboto_light";
+}
+
+.botonBuscar{
+    
+    padding-left: 40px;
+    padding-right: 40px;
+    --border-radius: 25px;
+
+}

@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, MenuController } from '@ionic/angular';
+import {  ToastController } from '@ionic/angular';
 
-
-
-interface Componente {
-  icon: string;
-  name: string;
-  redirecTo: string;
-}
 
 
 
@@ -19,27 +13,74 @@ interface Componente {
 
 export class InicioPage implements OnInit {
 
-  componentes: Componente[] = [
-    {
-      icon: 'bug-outline',
-      name: 'Alert',
-      redirecTo: '/alert'
-    },
-    {
-      icon: 'alarm-outline',
-      name: 'Action-Sheet',
-      redirecTo: '/action-sheet'
-    },
-  ];
-
-
-  constructor(private alertController: AlertController) { }
+  constructor(private alertController: AlertController, 
+              public menuCtrl: MenuController,
+              private toastController: ToastController) {}
 
   async Saludo() {
     const alert = await this.alertController.create({
       header: 'Saludo',
-      message: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham',
+      message: 'Somos un equipo de estudiantes de DuocUc, quienes desarrollamos esta App con la finalidad de mejorar la forma de registrar la asistencia entre alumnos y docentes. Permitiendo así, reducir la cantidad de errores y tiempo en que se pasa la lista. Nuestro objetivo es ayudar a mejorar con tecnología la forma en que se registra la asistencia y ahorrar tiempo a profesores y alumnos.',
       buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
+
+  async Alumno(position: 'bottom'){
+    const toast = await this.toastController.create({
+      message: '¡Has ingresado a la seccion Alumno!',
+      duration: 2000,
+      position: 'top',
+      color: "dark"
+    });
+
+    await toast.present();
+  }
+
+  async Docente(position: 'bottom'){
+    const toast = await this.toastController.create({
+      message: '¡Has ingresado a la seccion Docente!',
+      duration: 2000,
+      position: 'top',
+      color: "dark"
+    });
+
+    await toast.present();
+  }
+
+  
+
+  async Contacto() {
+    const alert = await this.alertController.create({
+      header: 'Ingrese sus datos',
+      buttons: ['Enviar'],
+      inputs: [
+        {
+          placeholder: 'Nombre',
+        },
+        {
+          placeholder: 'Nickname (max 8 cáracteres)',
+          attributes: {
+            maxlength: 8,
+          },
+        },
+        {
+          type: 'email',
+          placeholder: 'nombre@duocuc.cl',
+        },
+        {
+          type: 'number',
+          placeholder: 'Edad',
+          min: 1,
+          max: 100,
+        },
+        {
+          type: 'textarea',
+          placeholder: 'Cuéntanos tus dudas',
+        },
+        
+      ],
     });
 
     await alert.present();
@@ -48,7 +89,19 @@ export class InicioPage implements OnInit {
   ngOnInit() {
   }
 
-  
+  ionViewWillEnter() {
+
+    this.menuCtrl.swipeGesture(false)
+  }
+
+  ionViewDidLeave() {
+
+    this.menuCtrl.swipeGesture(true)
+  }
+
+
+
+
 
 }
 

@@ -8,36 +8,58 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="background">
- <div class="qrscann">
-<div class="alumnoqr">
-  
-  </div>
+<ion-content [fullscreen]="true" class="background">
+ 
+
   <div class="titulo" >
     <h4>Escanea tu QR para quedar presente!</h4>
+  </div >
 <div class="qrimg">
   
 <img src="assets/qrscan.png" alt="" width="220px">
 
-</div>
 
-</div>
-  <ion-button  class="qr" >
-    <ion-icon name="qr-code-outline"></ion-icon>
+
+</div >
+<div class="qr">
+  <ion-button expand="block" (click)="scanCode()">
+    <ion-icon name="qr-code-outline">Escanea el codigo</ion-icon>
   </ion-button> 
-
 </div>
+<div *ngIf="scannedData">
+  <h3>
+    Contenido Obtenido: <b> {{scannedData["text"]}}</b>
+  </h3>
+  <h3>
+    Contenido Obtenido: <b> {{scannedData["format"]}}</b>
+  </h3>
+</div>
+<h1>GENERAR QR</h1>
+
+<ion-item class="inputs">
+  <ion-label>Datos: </ion-label>
+  <ion-input  placeholder="ingresa datos"  [(ngModel)]="encodedData">
+  </ion-input>
+</ion-item>
+
+  <ion-button color="success" expand="block"(click)="encodeText()">
+    Crear QR
+  </ion-button>
+
 </ion-content>
 
 <ion-footer class="ion-no-border">
   <ion-toolbar>
     <div class="footer">
-      
+      <ion-tab-button routerLink="/alumno-home">
+        <ion-icon name="arrow-back"></ion-icon>
+        <ion-label>Atras</ion-label>
+      </ion-tab-button>
       <ion-tab-button (click)="Saludo()" >
         <ion-icon name="woman"></ion-icon>
         <ion-label>Nosotros</ion-label>
       </ion-tab-button>
-      <ion-tab-button routerLink="/inicio">
+      <ion-tab-button (click)="Contacto()">
         <ion-icon name="paper-plane"></ion-icon>
         <ion-label>contactanos</ion-label>
       </ion-tab-button>

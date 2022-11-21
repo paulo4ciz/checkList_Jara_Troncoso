@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FeriadosService } from './feriados.service';
+import { ApiNoticiasService } from './api-noticias.service';
 
-describe('FeriadosService', () => {
-  let service: FeriadosService;
+describe('ApiNoticiasService', () => {
+  let service: ApiNoticiasService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(FeriadosService);
+    service = TestBed.inject(ApiNoticiasService);
   });
 
   it('should be created', () => {

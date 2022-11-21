@@ -1,29 +1,35 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      
-    </ion-buttons>
-    
+    <ion-title class="header">Alumno</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="background">
- <div class="alumnohome">
+ 
 <div class="iconalumno">
   <img src="assets/alumnofoto.png" alt="" width="220px">
-  <h5>Nombre Apellido1 Apellido2</h5>
+  <h5 class="nombre">Nombre Apellido1 Apellido2</h5>
   </div>
 
 
-
+<div class="botones">
 <ion-button  class="scann" routerLink="/alumno-escanear-qr">
   Escanear Código QR
 </ion-button> 
+</div>
+<div class="botones">
 <ion-button class="asig" routerLink="/alumno-asignaturas">
   Ver Asignaturas
 </ion-button>
+</div>
+<div class="botones">
+<ion-button class="asig" color="danger" routerLink="/inicio">
+  cerrar sesion
+</ion-button>
 
 </div>
+
+
 </ion-content>
 
 <ion-footer class="ion-no-border">
@@ -34,10 +40,11 @@
         <ion-icon name="woman"></ion-icon>
         <ion-label>Nosotros</ion-label>
       </ion-tab-button>
-      <ion-tab-button routerLink="/inicio">
+      <ion-tab-button (click)="Contacto()">
         <ion-icon name="paper-plane"></ion-icon>
         <ion-label>contactanos</ion-label>
       </ion-tab-button>
+     
     </div>
   </ion-toolbar>
 </ion-footer>

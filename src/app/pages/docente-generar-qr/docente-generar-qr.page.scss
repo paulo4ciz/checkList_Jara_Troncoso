@@ -1,0 +1,76 @@
+.background{
+    --ion-background-color: linear-gradient(180deg, #cdf9fc 25%, #52ACFF 100%);
+}
+
+@font-face {
+    font-family: "roboto_light";
+    src: url(/assets/fonts/Roboto-Light.ttf);
+  }
+
+  @font-face {
+    font-family: "roboto_thin";
+    src: url(/assets/fonts/Roboto-Thin.ttf);
+  }
+
+  @font-face {
+    font-family: "lemon_medium";
+    src: url(/assets/fonts/lemon_medium.otf);
+  }
+
+.footer{
+    display:flex;
+}
+
+.inputs{
+    --ion-background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    --border-radius: 25px;
+    --border-width: 0px;
+    font-family: "roboto_light";
+
+    
+}
+
+.logo{
+    text-align: center;
+    padding-top: 40px;
+}
+
+.boton_inicio{
+    padding-left: 40px;
+    padding-right: 40px;
+    --border-radius: 25px;
+}
+
+.header{
+    text-align: center;
+    font-family: 'lemon_medium';
+}
+
+.logoestudiantes{
+    text-align: center;
+    padding-top: 40px;
+}
+
+.qr{
+    text-align: center;
+    margin-top: 100px;
+    border-radius: 15px;
+}
+
+.qrimg{
+    text-align: center;
+    padding-top: 40px;
+    margin-top: 10px;
+    
+}
+
+.titulo{
+    text-align: center;
+    font-family: 'lemon_medium';
+    
+    padding: 20px;
+
+}
+

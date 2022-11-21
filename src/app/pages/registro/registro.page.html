@@ -11,37 +11,38 @@
     <img src="assets/logo_registro.png" alt="" width=200px>
   </div>
  
-  <form [FormGroup]="formularioRegistro" (keyup.enter)="CrearUsuario()">
+  <form [formGroup]= "formularioRegistro" (keyup.enter)= "CrearUsuario()">
 
 
-    <ion-item>
+    <ion-item class="inputs">
       <ion-label>Nombre: </ion-label>
-      <ion-input type="text" formControlName="Nombre" required>
+      <ion-input type="text" placeholder="Nombre" formControlName="nombre">
       </ion-input>
     </ion-item>
 
    
-    <ion-item>
+    <ion-item class="inputs">
       <ion-label>Password: </ion-label>
-      required>
-    </ion-input>
-    <ion-input type="password" formControlName="Password"></ion-input>
+      <ion-input type="password" placeholder="Contraseña" formControlName="password">
+      </ion-input>
     </ion-item>
    
-    <ion-item>
+    <ion-item class="inputs">
       <ion-label>Email: </ion-label>
-      <ion-input type="email" formControlName="Email"
-        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
+      <ion-input type="text" placeholder="Email" formControlName="email">
       </ion-input>
     </ion-item>
     
-    <ion-item >
-      <ion-label>Fnaci.: </ion-label>
-      <ion-input type="date" formControlName="Fnaci"
-        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
-      </ion-input>
+    
+    <ion-item class="inputs">
+      <ion-select type="text" placeholder="¿que eres?" formControlName="tipo">
+        <ion-select-option >Docente</ion-select-option>
+        <ion-select-option >Alumno</ion-select-option>
+        
+      </ion-select>
     </ion-item>
-    <ion-button (click)="Crear Usuario" ></ion-button>
+    <ion-button class="boton_registrate" (click)="CrearUsuario()" expand="block"
+      routerLink="/inicio">
       Registrar
     </ion-button>
 
@@ -56,13 +57,13 @@
     <div class="footer">
       <ion-tab-button routerLink="/inicio">
         <ion-icon name="arrow-back"></ion-icon>
-        <ion-label>back</ion-label>
+        <ion-label>Atras</ion-label>
       </ion-tab-button>
       <ion-tab-button (click)="Saludo()">
         <ion-icon name="woman"></ion-icon>
-        <ion-label>about us</ion-label>
+        <ion-label>¿Quienes somos?</ion-label>
       </ion-tab-button>
-      <ion-tab-button routerLink="/inicio">
+      <ion-tab-button (click)="Contacto()">
         <ion-icon name="paper-plane"></ion-icon>
         <ion-label>contactanos</ion-label>
       </ion-tab-button>

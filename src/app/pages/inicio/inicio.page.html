@@ -12,27 +12,21 @@
   <div class="inicio">
     <h3 class="bienvenido">Bienvenido!, comencemos!</h3>
     <h2>¿Que eres?</h2>
-    <ion-button routerLink="/login">
-
+    <ion-button (click)="Docente()" routerLink="/docente">
       Docente
     </ion-button>
-    <ion-button routerLink="/login">
-      Alumno
-
-    </ion-button>
-
     
+    <ion-button class="boton" (click)="Alumno()" routerLink="/alumno">
+      Alumno
+    </ion-button>
 
     <h4>¿No tienes cuenta?</h4>
-    <ion-item class="registrate" routerLink="/Registro">
-      <ion-button (click)="Crear Usuario" ></ion-button>
-      Registrar
-    </ion-button>
+    <ion-item class="registrate" routerLink="/registro">
 
       <ion-label >
         <h2>Registrate</h2>
       </ion-label>
-      
+
     </ion-item>
   </div>
   <p class="inicio">No te preocupes, no compartiremos tus datos con nadie</p>
@@ -48,7 +42,7 @@
         <ion-icon name="woman"></ion-icon>
         <ion-label>Nosotros</ion-label>
       </ion-tab-button>
-      <ion-tab-button routerLink="/inicio">
+      <ion-tab-button (click)="Contacto()">
         <ion-icon name="paper-plane"></ion-icon>
         <ion-label>contactanos</ion-label>
       </ion-tab-button>

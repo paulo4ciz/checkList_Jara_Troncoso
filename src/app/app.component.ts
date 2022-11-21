@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ToastController } from '@ionic/angular';
+
 
 interface Componente{
   icon:string;
@@ -12,8 +14,20 @@ interface Componente{
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private toastController: ToastController) {}
 
+  async cerraresion(){
+    const toast = await this.toastController.create({
+      message: 'Has cerrado sesion, vuelve pronto!',
+      duration: 2000,
+      position: 'bottom',
+      color: 'dark'
+    });
+
+    await toast.present();
+  }
+
+ 
   componentes : Componente [] = [
     {
       icon: 'book',
@@ -28,7 +42,7 @@ export class AppComponent {
     {
       icon: 'pencil',
       name: 'Editar Asistencia',
-      redirecTo: '/docente-editar'
+      redirecTo: '/docente-editar-asistencia'
     },
     {
       icon: 'log-out',
@@ -36,7 +50,6 @@ export class AppComponent {
       redirecTo: '/inicio'
     },
   ];
-
 }
 
 

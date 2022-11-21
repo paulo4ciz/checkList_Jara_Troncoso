@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { IngresadoGuard } from './ingresado.guard';
+import { NoIngresadoGuard } from './no-ingresado.guard';
 const routes: Routes = [
   {
     path: '',
@@ -45,7 +46,8 @@ const routes: Routes = [
   },
   {
     path: 'alumno-home',
-    loadChildren: () => import('./pages/alumno-home/alumno-home.module').then( m => m.AlumnoHomePageModule)
+    loadChildren: () => import('./pages/alumno-home/alumno-home.module').then( m => m.AlumnoHomePageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'alumno',
@@ -53,19 +55,17 @@ const routes: Routes = [
   },
   {
     path: 'alumno-escanear-qr',
-    loadChildren: () => import('./pages/alumno-escanear-qr/alumno-escanear-qr.module').then( m => m.AlumnoEscanearQrPageModule)
+    loadChildren: () => import('./pages/alumno-escanear-qr/alumno-escanear-qr.module').then( m => m.AlumnoEscanearQrPageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'alumno-asignaturas',
-    loadChildren: () => import('./pages/alumno-asignaturas/alumno-asignaturas.module').then( m => m.AlumnoAsignaturasPageModule)
+    loadChildren: () => import('./pages/alumno-asignaturas/alumno-asignaturas.module').then( m => m.AlumnoAsignaturasPageModule),
+    canActivate: [IngresadoGuard]
   },
   {
-    path: 'datos',
-    loadChildren: () => import('./pages/datos/datos.module').then( m => m.DatosPageModule)
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    path: 'docente-editar-asistencia',
+    loadChildren: () => import('./pages/docente-editar-asistencia/docente-editar-asistencia.module').then( m => m.DocenteEditarAsistenciaPageModule)
   },
  
     

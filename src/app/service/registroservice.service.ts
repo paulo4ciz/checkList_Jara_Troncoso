@@ -37,6 +37,7 @@ export class RegistroserviceService {
     }) // falta commit
    }
 
+   
    //metodo obtener datos
 
    async getUsuarios(): Promise<Usuario[]>{
